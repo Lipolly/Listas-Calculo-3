@@ -1,0 +1,102 @@
+\documentclass{article}
+\usepackage{amsmath} % para usar o ambiente "align"
+\usepackage{amssymb} % para usar o símbolo de integração dupla
+\begin{document}
+
+\section*{Exercício 16 - Seção 15.1}
+
+\textbf{Enunciado:} Calcular $\iint_R x\,dA$, onde $R$ é a região triangular com vértices em $(0,0)$, $(2,0)$ e $(0,3)$.
+
+\textbf{Solução:} A região $R$ pode ser descrita como $R = \{(x,y) \mid 0 \leq x \leq 2, 0 \leq y \leq -\frac{3}{2}x + 3\}$.
+
+Assim, temos:
+
+\begin{align*}
+\iint_R x\,dA &= \int_{0}^{2} \int_{0}^{-\frac{3}{2}x+3} x \,dy\,dx \\
+&= \int_{0}^{2} x\left[-\frac{3}{2}x+3\right]_{0}^{-\frac{3}{2}x+3} \,dx \\
+&= \int_{0}^{2} x\left(\frac{3}{2}x-3\right) \,dx \\
+&= \left[\frac{3}{4}x^3-3x^2\right]_{0}^{2} \\
+&= \frac{3}{4}(2)^3-3(2)^2 \\
+&= \boxed{-3}.
+\end{align*}
+
+\section*{Exercício 30 - Seção 15.1}
+
+\textbf{Enunciado:} Avaliar $\iint_R \frac{1}{x+2y}\,dA$, onde $R$ é o retângulo $0 \leq x \leq 1$, $0 \leq y \leq 2$.
+
+\textbf{Solução:} A integral dupla é
+
+\begin{align*}
+\iint_R \frac{1}{x+2y}\,dA &= \int_{0}^{1} \int_{0}^{2} \frac{1}{x+2y} \,dy\,dx.
+\end{align*}
+
+Integrando em relação a $y$, temos:
+
+\begin{align*}
+\int_{0}^{2} \frac{1}{x+2y} \,dy &= \frac{1}{2} \ln|x+2y| \bigg|_{0}^{2} \\
+&= \frac{1}{2} \ln|x+4|.
+\end{align*}
+
+Substituindo essa expressão na integral dupla, temos:
+
+\begin{align*}
+\iint_R \frac{1}{x+2y}\,dA &= \int_{0}^{1} \frac{1}{2} \ln|x+4| \,dx \\
+&= \frac{1}{2} \int_{0}^{1} \ln|x+4| \,dx.
+\end{align*}
+
+Integrando em relação a $x$ por partes, temos:
+
+\begin{align*}
+\int \ln|x+4| \,dx &= x \ln|x+4| - x + C.
+\end{align*}
+
+Portanto,
+
+\begin{align*}
+\iint_R \frac{1}{x+2y}\,dA &= \frac{1}{2} \int_{0}^{1} \ln|x+4| \,dx \\
+&= \frac{1}{2} \left[(x\ln|x+4| - x)\right]_{0}^{1} \\
+&= \frac{1}{2} \left[(1\ln|1+4| - 1) - (0\ln|0+4| - 0)\right] \\
+&= \boxed{\frac{1}{2} \ln 5 - \frac{1}{2}}.
+\end{align*}
+\section*{Exercício 32 - Seção 15.1}
+
+\textbf{Enunciado:} Avaliar $\iint_R y^2 \,dA$, onde $R$ é a região delimitada pelos círculos $x^2+y^2=1$ e $x^2+y^2=4$.
+
+\textbf{Solução:} A região $R$ pode ser representada na forma polar como $1 \leq r \leq 2$ e $0 \leq \theta \leq 2\pi$. Portanto, a integral dupla é
+
+\begin{align*}
+\iint_R y^2 \,dA &= \int_{0}^{2\pi} \int_{1}^{2} r^2\sin^2\theta \,dr\,d\theta \\
+&= \int_{0}^{2\pi} \sin^2\theta \int_{1}^{2} r^2 \,dr\,d\theta \\
+&= \int_{0}^{2\pi} \sin^2\theta \left[\frac{1}{3}r^3\right]_{1}^{2} \,d\theta \\
+&= \frac{7}{3} \int_{0}^{2\pi} \sin^2\theta \,d\theta.
+\end{align*}
+
+Usando a identidade trigonométrica $\sin^2\theta = \frac{1}{2}(1-\cos2\theta)$, temos:
+
+\begin{align*}
+\frac{7}{3} \int_{0}^{2\pi} \sin^2\theta \,d\theta &= \frac{7}{3} \int_{0}^{2\pi} \frac{1}{2}(1-\cos2\theta) \,d\theta \\
+&= \frac{7}{6} \left[\theta - \frac{1}{2}\sin2\theta\right]_{0}^{2\pi} \\
+&= \boxed{\frac{7\pi}{3}}.
+\end{align*}
+
+\section*{Exercício 42 - Seção 15.1}
+
+\textbf{Enunciado:} Calcular $\iint_R \sqrt{x^2+y^2} dA$, onde $R$ é a região limitada pelo círculo $x^2+y^2=a^2$.
+
+Solução:
+
+Usando coordenadas polares, temos:
+
+\begin{align*}
+\iint_R \sqrt{x^2+y^2} dA &= \int_{0}^{2\pi} \int_{0}^{a} r\sqrt{r^2}drd\theta \\
+&= \int_{0}^{2\pi} \int_{0}^{a} r^2 drd\theta \\
+&= \int_{0}^{2\pi} \left[\frac{r^3}{3}\right]_{0}^{a} d\theta \\
+&= \int_{0}^{2\pi} \frac{a^3}{3} d\theta \\
+&= \frac{a^3}{3} \int_{0}^{2\pi} d\theta \\
+&= \frac{a^3}{3} \left[\theta\right]_{0}^{2\pi} \\
+&= \frac{2\pi a^3}{3}.
+\end{align*}
+
+Portanto, $\iint_R \sqrt{x^2+y^2} dA = \frac{2\pi a^3}{3}$.
+
+\end{document}
