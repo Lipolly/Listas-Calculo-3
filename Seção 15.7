@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section*{Exercício 6 - Seção 15.7}
+\textbf{Enunciado:} Calcule o momento de massa em relação ao plano $xy$ do sólido $E$ que está dentro do cilindro $x^2 + y^2 = 4$ entre os planos $z = 0$ e $z = 1$, se a densidade em cada ponto é proporcional à distância ao eixo $z$.
+
+\textbf{Resolução} Usando coordenadas cilíndricas, as integrais ficam:
+
+\begin{align*}
+M &= 2\int_0^{2\pi}\int_1^2\int_0^1 \rho^3 \sin^2\phi , d\rho , dz , d\theta
+\end{align*}
+
+Simplificando e resolvendo as integrais, temos:
+
+\begin{align*}
+M &= 2\int_0^{2\pi}\int_1^2\int_0^1 \rho^3 \sin^2\phi , d\rho , dz , d\theta \\
+&= 2\int_0^{2\pi} , d\theta \int_1^2 , dz \int_0^1 \rho^3 \sin^2\phi , d\rho \\
+&= 2\cdot 2\pi \cdot \frac{1}{3} \cdot \frac{1}{2} \\
+&= \frac{2\pi}{3}
+\end{align*}
+
+Portanto, o momento de massa em relação ao plano $xy$ do sólido $E$ é $\frac{2\pi}{3}$.
+
+\newpage
+
+\section*{Exercício 8 - Seção 15.7}
+\textbf{Enunciado:} Calcule a massa do sólido limitado pelo parabolóide $z = 1 - x^2 - y^2$ e pelo plano $z = 0$, onde a densidade em cada ponto é proporcional à distância ao plano $z = 0$.
+
+\textbf{Resolução} Usando coordenadas cilíndricas, temos:
+
+\begin{align*}
+M &= \int_0^{2\pi}\int_0^1\int_0^{1-r^2} \rho \cdot \sqrt{1 + \frac{\partial z}{\partial \rho}^2 + \frac{\partial z}{\partial \phi}^2} , dz , d\rho , d\phi \\
+&= \int_0^{2\pi}\int_0^1\int_0^{1-r^2} \rho \cdot \sqrt{1 + 4\rho^2} , dz , d\rho , d\phi \\
+&= \frac{\sqrt{17}}{6} \cdot \pi
+\end{align*}
+
+Portanto, a massa do sólido é $\frac{\sqrt{17}}{6} \cdot \pi$.
+
+\newpage
+
+\section*{Exercício 30 - Seção 15.7}
+\textbf{Enunciado:} Calcule o momento de inércia do sólido limitado pelo cone $z = \sqrt{x^2 + y^2}$ e pelo plano $z = 1$ em relação ao eixo $z$.
+
+\textbf{Resolução} Usando coordenadas cilíndricas, temos:
+
+\begin{align*}
+I_z &= \iiint_E \rho^2 , dV \\
+&= \int_0^{2\pi}\int_0^1\int_0^{r} \rho^3 \cdot \sin^2 \phi , dz , d\rho , d\phi \z\\
+&= \frac{1}{4} \cdot \pi \int_0^1 r^4 , dr \z\\
+&= \frac{1}{20} \cdot \pi
+\end{align*}
+
+Portanto, o momento de inércia do sólido em relação ao eixo $z$ é $\frac{1}{20} \cdot \pi$.
+\end{document}
