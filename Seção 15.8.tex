@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section*{Exercício 44 - Seção 15.8}
+\textbf{Enunciado:} Calcular a integral tripla $\iiint_E z,dV$, onde $E$ é o sólido que fica abaixo do cone $z=\sqrt{x^2+y^2}$ e acima da esfera $x^2+y^2+z^2=a^2$ ($a>0$).
+
+\textbf{Resolução} O sólido $E$ é descrito na condição $z \geq 0$, $x^2 + y^2 \leq z^2$ e $x^2+y^2+z^2\leq a^2$. Podemos descrever o sólido $E$ na coordenadas esféricas como $0 \leq \phi \leq 2\pi$, $0 \leq \theta \leq \frac{\pi}{4}$ e $0 \leq \rho \leq a \sin\theta$. Então temos:
+
+\begin{align*}
+\iiint_E z,dV &= \int_0^{2\pi}\int_0^{\frac{\pi}{4}}\int_0^{a\sin\theta} \rho\cos\phi\cdot \rho^2\sin\theta,d\rho,d\theta,d\phi \\
+&= \int_0^{2\pi}\int_0^{\frac{\pi}{4}}\sin\theta\cos\phi,d\theta,d\phi \int_0^{a\sin\theta} \rho^3,d\rho\\
+&= \int_0^{2\pi}\int_0^{\frac{\pi}{4}}\sin\theta\cos\phi\cdot \frac{a^4\sin^4\theta}{4},d\theta,d\phi \\
+&= \frac{a^4}{4}\int_0^{2\pi}\cos\phi,d\phi\int_0^{\frac{\pi}{4}}\sin^5\theta,d\theta \\
+&= \frac{a^4}{4}\cdot 0 \cdot \frac{2}{3}\left(1-\frac{1}{\sqrt{2}}\right) \\
+&= 0
+\end{align*}
+
+Portanto, a integral tripla $\iiint_E z,dV$ é igual a $0$.
+\end{document}
