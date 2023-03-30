@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\begin{document}
+
+\section*{Exercício 4 - Seção 15.3}
+
+\textbf{Enunciado:} Calcular a integral dupla de $f(x,y) = y$ sobre a região $D$ limitada pela circunferência $x^2 + y^2 = 1$ e o eixo $x$ positivo, na primeira interseção com o eixo $x$.
+
+\begin{align*}
+    \iint_D f(x,y)\,dA &= \int_0^1 \int_0^{\pi} f(r\cos \theta, r\sin \theta) r\,d\theta\,dr \\
+    &= \int_0^1 \int_0^{\pi} r\sin \theta \cdot r\,d\theta\,dr \\
+    &= \int_0^1 \left[-r\cos \theta \right]_0^{\pi} r\,dr \\
+    &= \int_0^1 2r^2\,dr \\
+    &= \left[\frac{2}{3} r^3 \right]_0^1 \\
+    &= \frac{2}{3}
+\end{align*}
+
+Portanto, a integral dupla de $f(x,y) = y$ sobre a região $D$ é $\frac{2}{3}$.
+
+\newpage
+\section*{Exercício 36 letra "a" - Seção 15.3}
+
+\textbf{Enunciado:} Calcule a integral dupla $\iint_D e^{x^2 - y^2} dA$, onde $D$ é a região delimitada pelo triângulo com vértices $(0,0)$, $(1,0)$ e $(1,2)$.
+
+\textbf{Solução.} A região $D$ é um triângulo, portanto podemos integrar sobre ele usando a integral dupla em coordenadas retangulares ou em coordenadas polares. Vamos usar coordenadas polares, pois a função integranda tem um termo da forma $x^2 - y^2$, que sugere a mudança de coordenadas. A equação da hipotenusa do triângulo é $y = 2x$, portanto a região $D$ pode ser descrita pelas seguintes desigualdades:
+
+$$
+\begin{aligned}
+0 &\leq r \leq 2 \sin\theta \\
+0 &\leq \theta \leq \frac{\pi}{4}.
+\end{aligned}
+$$
+
+Assim, a integral dupla pode ser escrita como
+
+$$
+\iint_D e^{x^2 - y^2} dA = \int_0^{\frac{\pi}{4}} \int_0^{2\sin\theta} r e^{r^2 \cos 2\theta} dr d\theta.
+$$
+
+Fazendo a substituição $u = r^2$, $du = 2r dr$, obtemos
+
+$$
+\iint_D e^{x^2 - y^2} dA = \frac{1}{2} \int_0^{\frac{\pi}{4}} \int_0^{4\sin^2\theta} e^{u \cos 2\theta} du d\theta.
+$$
+
+Fazendo a substituição $v = u \cos 2\theta$, $dv = -2u \sin 2\theta d\theta$, obtemos
+
+$$
+\iint_D e^{x^2 - y^2} dA = -\frac{1}{4} \int_0^{\frac{\pi}{4}} e^{-\sin 2\theta} \left[ e^{-4 \sin^2 \theta} - 1 \right] d\theta.
+$$
+
+Podemos aproximar a integral acima usando um método numérico, ou podemos deixar a integral na forma acima como resposta. 
+
+\end{document}
