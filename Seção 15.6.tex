@@ -57,4 +57,47 @@ V &= \int_0^{2\pi} \int_0^3 \int_0^r r dz dr d\theta \\
 
 Portanto, o volume da região é $\frac{9}{2}\pi$.
 
+\newpage
+
+\section*{Exercício 10 - Seção 15.6}
+\textbf{Enunciado:} A região $E$ é definida pela desigualdade $x^2 + y^2 \leq z^2$ e $z^2 \leq 1$. Calcule
+
+$$\iiint_E z^2 dV$$
+
+\textbf{Resolução:}
+
+Para resolver a integral tripla, primeiro precisamos determinar os limites de integração. A região $E$ é definida por $x^2 + y^2 \leq z^2$ e $z^2 \leq 1$, ou seja, é a região entre um cone circular e uma esfera unitária. A figura a seguir ilustra a região $E$:
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+\draw[thick,->] (-1.5,0,0) -- (2,0,0) node[below]{$y$};
+\draw[thick,->] (0,-1.5,0) -- (0,2,0) node[right]{$z$};
+\draw[thick,->] (0,0,-1.5) -- (0,0,2) node[above]{$x$};
+\draw[dashed] (0,0,0) circle[radius=1];
+\draw[dashed] (0,0,0) -- (1,1,1);
+\draw[dashed] (0,0,1) -- (1,1,1);
+\draw[dashed] (0,0,0) circle[radius=1.5];
+\draw[dashed] (0,0,0) -- (0,0,1.5);
+\draw[dashed] (0,0,1.5) -- (-1.06,-1.06,0);
+\draw[dashed] (0,0,1.5) -- (1.06,1.06,0);
+\draw[dashed] (-1.06,-1.06,0) -- (1.06,1.06,0);
+\node[above left] at (0,0,1.5) {$z=\sqrt{x^2+y^2}$};
+\node[below] at (1.5,0,0) {$x^2+y^2+z^2=1$};
+\end{tikzpicture}
+\end{center}
+
+Como a região é simétrica em relação ao plano $xy$, podemos usar coordenadas cilíndricas. Temos que $x^2 + y^2 = r^2$, então a condição $x^2 + y^2 \leq z^2$ pode ser escrita como $r^2 \leq z^2$. Como a esfera unitária tem raio $1$, a condição $z^2 \leq 1$ nos diz que $0 \leq z \leq 1$. Portanto, os limites de integração são:
+
+$$0 \leq z \leq 1, \quad 0 \leq r \leq z, \quad 0 \leq \theta \leq 2\pi$$
+
+Assim, a integral tripla fica:
+
+\begin{align*}
+\iiint_E z^2 dV &= \int_0^{2\pi} \int_0^1 \int_0^z z^2 r\,dr\,dz\,d\theta \\
+&= \int_0^{2\pi} \int_0^1 \frac{1}{4}z^5\,dz\,d\theta \\
+&= \frac{\pi}{10}
+\end{align*}
+
+Portanto, o valor da integral tripla é $\frac{\pi}{10}$.
+
 \end{document}
